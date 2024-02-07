@@ -1,0 +1,28 @@
+doctype html
+html
+	head
+		title Character Page
+		link(rel="stylesheet" href="/common.css")
+
+	div#main
+		div#head
+			img(src="/icon/home.png")
+			a(id='home' href='http://localhost:3005/' style="text-decoration:none;") #{'Home Page'}
+		h1 Character
+		a(href='http://localhost:3005/characters/'+sample.c_name)
+			img(src="/character/"+sample.c_name+".png" alt="centered image")
+		h2 #{sample.c_name}
+		p Element: #{sample.element}
+		p Rarity: #{sample.c_rarity}
+		p Base_HP: #{sample.c_base_HP}
+		p Base_DEF: #{sample.c_base_DEF}
+		p Base_ATK: #{sample.c_base_ATK}
+		br
+		h3 Weapons Type:
+		a(href="/weaponType/" + sample.equip_type) #{sample.equip_type}
+		br
+		h3 Equitable Weapons:
+		div#elements
+			each ele in character
+				a(href='http://localhost:3005/weapons/'+ele.w_name)
+					img(src="/weapon/"+ele.w_name+".png")

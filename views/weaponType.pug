@@ -1,0 +1,15 @@
+html
+	head
+		title #{sample.w_type}
+		link(rel="stylesheet" href="/common.css")
+
+	div#main
+		div#head
+			img(src="/icon/home.png")
+			a(id='home' href='http://localhost:3005/' style="text-decoration:none;") #{'Home Page'}
+		h1 Substatus
+		h3 Here are all #{sample.w_type}s:
+		div#elements
+			each ele in weapons
+				a(href='http://localhost:3005/weapons/'+ele.w_name)
+					img(src="/weapon/"+ele.w_name+".png")

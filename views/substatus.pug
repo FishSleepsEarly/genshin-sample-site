@@ -1,0 +1,24 @@
+html
+	head
+		title Substatus Page
+		link(rel="stylesheet" href="/common.css")
+
+	div#main
+		div#head
+			img(src="/icon/home.png")
+			a(id='home' href='http://localhost:3005/' style="text-decoration:none;") #{'Home Page'}
+		h1 Substatus (#{sample.status})
+		if isWeapon
+			h3 Weapons That Could Have #{sample.status}:
+			br
+			div#elements
+				each ele in substatus
+					a(href='http://localhost:3005/weapons/'+ele.w_name)
+						img(src="/weapon/"+ele.w_name+".png")
+		else
+			h3 Artifacts That Could Have #{sample.status}:
+			br
+			div#elements
+				each ele in substatus
+					a(href='http://localhost:3005/artifacts/'+ele.a_type)
+						img(src="/artifact/"+ele.a_type+".png")

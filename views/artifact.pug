@@ -1,0 +1,18 @@
+html
+	head
+		title Artifact Page
+		link(rel="stylesheet" href="/common.css")
+
+	div#main
+		div#head
+			img(src="/icon/home.png")
+			a(id='home' href='http://localhost:3005/' style="text-decoration:none;") #{'Home Page'}
+		h1 Artifact
+		center 
+			a(href='http://localhost:3005/artifacts/'+sample.a_type)
+				img(src="/artifact/"+sample.a_type+".png" alt="centered image")
+		h2 #{sample.a_type}
+		h3 Possible Substatus:
+		each ele in artifact
+			a(href="/a_substatus/" + ele.status) -#{ele.status} (#{ele.amount})
+			br

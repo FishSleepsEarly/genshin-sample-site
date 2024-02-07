@@ -1,0 +1,26 @@
+html
+	head
+		title Weapon Page
+		link(rel="stylesheet" href="/common.css")
+
+	div#main
+		div#head
+			img(src="/icon/home.png")
+			a(id='home' href='http://localhost:3005/' style="text-decoration:none;") #{'Home Page'}
+		h1 Weapon
+		a(href='http://localhost:3005/weapons/'+sample.w_name)
+			img(src="/weapon/"+sample.w_name+".png" alt="centered image")
+		h2 #{sample.w_name}
+		p Rarity: #{sample.w_rarity}
+		p Base_ATK: #{sample.w_base_ATK}
+		h3 Weapons Type:
+		a(href="/weaponType/" + sample.w_type) #{sample.w_type}
+		br
+		h3 Substatus:
+		a(href="/w_substatus/" + sample.status) #{sample.status} (#{sample.amount})
+		br
+		h3 Suitable Characters:
+		div#elements
+			each ele in weapon
+				a(href='http://localhost:3005/characters/'+ele.c_name)
+					img(src="/character/"+ele.c_name+".png")
